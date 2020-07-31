@@ -2,6 +2,7 @@ import org.junit.Test
 import org.junit.Ignore
 import org.junit.Rule
 import org.junit.rules.ExpectedException
+import kotlin.system.measureNanoTime
 import kotlin.test.assertEquals
 
 class HammingTest {
@@ -27,12 +28,12 @@ class HammingTest {
 
     @Test
     fun `long identical strands`() {
-        assertEquals(0, Hamming.compute("GGACTGAAATCTG", "GGACTGAAATCTG"))
+                assertEquals(0, Hamming.compute("GGACTGAAATCTG", "GGACTGAAATCTG"))
     }
 
     @Test
     fun `long different strands`() {
-        assertEquals(9, Hamming.compute("GGACGGATTCTG", "AGGACGGATTCT"))
+                assertEquals(9, Hamming.compute("GGACGGATTCTG", "AGGACGGATTCT"))
     }
 
     @Test
