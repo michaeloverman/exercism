@@ -3,8 +3,7 @@ object Luhn {
     fun isValid(candidate: String): Boolean {
         var numStr = candidate.filter { it != ' ' } // remove spaces
         if (numStr.length < 2) return false // more than one digit
-        var num: Long? = numStr.toLongOrNull() ?: return false // just numbers?
-        num = num!!
+        var num: Long = numStr.toLongOrNull() ?: return false // just numbers?
         var sum = 0L
         var dub = false
         while (num > 0) {
